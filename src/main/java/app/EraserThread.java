@@ -1,4 +1,4 @@
-package basic;
+package app;
 
 public class EraserThread implements Runnable {
    private boolean stop;

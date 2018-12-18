@@ -1,4 +1,4 @@
-package basic;
+package app;
 
 
 
@@ -13,8 +13,9 @@ public class Main {
    private static String[] midiSrcFiles = new String[]{"src/main/resources/pianocon.mid", "src/main/resources/la_mer_1.mid", "src/main/resources/helloWorld.mid"};
 
    public static void main(String[] args) {
-      System.out.println("Welcome to the basic midi database.");
+      System.out.println("Welcome to the app midi database.");
       String sequenceName = midiSrcFiles[2];
+
       //object to pass to MidiParser
       MidiDatabaseDAO dao = new BasicMidiDatabaseDAO();
       Sequence sequence;
