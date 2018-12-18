@@ -1,4 +1,4 @@
 package persistence.pojo;
 
-public class Note {
+public class PPatchList {
 }

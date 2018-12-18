@@ -1,5 +1,8 @@
 package persistence.pojo;
 
+/**
+ *
+ */
 public class Sequence {
 
    private int id_sequence;
@@ -9,6 +12,7 @@ public class Sequence {
 
    private int num_tracks;
    private int midifile_format;
+   private
 
    public Sequence(){
 
