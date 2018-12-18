@@ -24,6 +24,7 @@ public class Main {
    }
    public static void commandLineApp2(){
       System.out.println("Welcome to the app midi database V2.0 - \n HIBERNATE EDITION!!!.");
+
    }
 
    /**

@@ -6,8 +6,9 @@ import javax.sound.midi.Sequence;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
 
-import com.sun.media.sound.MidiUtils;
-import persistence.pojo.*;
+import hibernate.pojo.PPatchList;
+import hibernate.pojo.PSequence;
+
 
 public class MIDI_Parser {
    //static refs

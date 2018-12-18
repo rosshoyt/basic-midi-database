@@ -21,7 +21,7 @@
  * 51 Franklin Street, Fifth Floor
  * Boston, MA  02110-1301  USA
  */
-package persistence.pojo;
+package hibernate.pojo;
 
 import java.util.Date;
 import javax.persistence.Column;
@@ -36,17 +36,17 @@ import org.hibernate.annotations.GenericGenerator;
 
 @Entity
 @Table( name = "EVENTS" )
-public class Event {
+public class Event_ExampleHB {
     private Long id;
 
     private String title;
     private Date date;
 
-	public Event() {
+	public Event_ExampleHB() {
 		// this form used by Hibernate
 	}
 
-	public Event(String title, Date date) {
+	public Event_ExampleHB(String title, Date date) {
 		// for application use, to create new events
 		this.title = title;
 		this.date = date;

@@ -1,4 +1,4 @@
-package persistence.pojo;
+package hibernate.pojo;
 
 import javax.sound.midi.ShortMessage;
 
