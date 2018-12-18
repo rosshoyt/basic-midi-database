@@ -3,7 +3,7 @@ package persistence.pojo;
 /**
  *
  */
-public class Sequence {
+public class PSequence {
 
    private int id_sequence;
 
@@ -12,9 +12,9 @@ public class Sequence {
 
    private int num_tracks;
    private int midifile_format;
-   private
 
-   public Sequence(){
+
+   public PSequence(){
 
    }
 }

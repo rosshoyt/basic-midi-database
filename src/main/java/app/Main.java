@@ -1,6 +1,9 @@
+
 package app;
 
 
+
+import commandline.pw_utils.PasswordField;
 
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Sequence;
@@ -13,6 +16,20 @@ public class Main {
    private static String[] midiSrcFiles = new String[]{"src/main/resources/pianocon.mid", "src/main/resources/la_mer_1.mid", "src/main/resources/helloWorld.mid"};
 
    public static void main(String[] args) {
+      if(args.length > 0) {
+         //launch gui
+      }
+      //else launch
+      commandLineApp2();
+   }
+   public static void commandLineApp2(){
+      System.out.println("Welcome to the app midi database V2.0 - \n HIBERNATE EDITION!!!.");
+   }
+
+   /**
+    * Static method which runs simple DAO interation of MIDI DB command line app.
+    */
+   public static void commandLineApp1() {
       System.out.println("Welcome to the app midi database.");
       String sequenceName = midiSrcFiles[2];
 
@@ -50,23 +67,25 @@ public class Main {
       midiParser.parseMidi();
 
    }
-
-   /**
+/*
     * Method which masks and reads in password on the command line.
     * DO NOT USE INSIDE IDE - BREAKS PROGRAM
     * @return password
     */
+
    private static String passwordPrompt_EraseDisplay() {
       String password = PasswordField.readPassword("Enter password: ");
       //System.out.println("Password entered was:" + password);
       return password;
    }
 
-   /**
+
+   /*
     * Method which takes in password - NO MASKING.
     * FOR USE INSIDE IDE FOR TESTING
     * @return password
     */
+
    private static String passwordPrompt_noMask() {
       //get password info
       Scanner scanner = new Scanner(System.in);

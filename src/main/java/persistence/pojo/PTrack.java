@@ -1,4 +1,4 @@
 package persistence.pojo;
 
-public class Track {
+public class PTrack {
 }

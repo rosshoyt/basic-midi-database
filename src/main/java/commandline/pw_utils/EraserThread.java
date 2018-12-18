@@ -1,4 +1,4 @@
-package app;
+package commandline.pw_utils;
 
 public class EraserThread implements Runnable {
    private boolean stop;

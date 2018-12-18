@@ -1,14 +1,24 @@
 package persistence.pojo;
 
-public class Note {
-   id_eventlist,
-   event_start,
-   message_type,
-   channel_num,
-   command,
-   key
-   , octave
-   , note_num
-   private note_name
-         velocity
+import javax.sound.midi.ShortMessage;
+
+public class PNote {
+   ShortMessage noteOn;
+   ShortMessage noteOff;
+
+   float note_start;
+   float note_off;
+   int trackNumber;
+   int channelNumber;
+
+   int key;
+   //derived attributes
+   int octave;
+   int dodecaphonic_interval;
+   String note_name;
+
+   int onVelocity;
+
+
+
 }

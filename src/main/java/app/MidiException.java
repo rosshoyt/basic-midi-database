@@ -1,4 +1,4 @@
 package app;
 
-public class MidiException {
+public class MidiException extends Throwable {
 }

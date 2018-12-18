@@ -1,4 +1,4 @@
-package app;
+package commandline.pw_utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
