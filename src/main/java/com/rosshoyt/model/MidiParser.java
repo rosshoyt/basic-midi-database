@@ -12,7 +12,7 @@ import com.rosshoyt.pojo.PSequence;
 //import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 
-public class SequenceParser {
+public class MidiParser {
    //static refs
 	private static final int NOTE_ON = 0X90;
 	private static final int NOTE_OFF = 0x80;
@@ -36,7 +36,7 @@ public class SequenceParser {
    }
 
 
-	public SequenceParser(Sequence sequence) {
+	public MidiParser(Sequence sequence) {
 		this.sequence = sequence;
       currentTrackNumber = 0;
 	}

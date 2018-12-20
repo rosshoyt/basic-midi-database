@@ -1,13 +1,15 @@
 package com.rosshoyt.model;
 
+import javax.sound.midi.Track;
 import javax.sound.midi.MidiEvent;
 import javax.sound.midi.ShortMessage;
 import java.util.ArrayList;
 
 public class TrackEventList {
-   private ArrayList<MidiEvent> eventlist;
+   private ArrayList     <MidiEvent> eventlist;
    private int tracknumber;
    private int size;
+
 
    public TrackEventList(int tracknumber){
       tracknumber = tracknumber;
@@ -15,12 +17,12 @@ public class TrackEventList {
       size = eventlist.size();
    }
 
-   public void addEvent(MidiEvent sm){
-      eventlist.add(sm);
+   public void addEvent(MidiEvent m){
+      eventlist.add(m);
    }
-   public MidiEvent getEvent(int index){
+   public MidiEvent getEvent(int eventNumber){
 
-      return eventlist.get(index);
+      return eventlist.get(eventNumber);
    }
 
 }

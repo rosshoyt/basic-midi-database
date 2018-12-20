@@ -4,8 +4,8 @@ package com.rosshoyt.app;
 
 
 //import com.fasterxml.classmate.AnnotationConfiguration;
+import com.rosshoyt.model.MidiParser;
 import com.rosshoyt.pw_utils.PasswordField;
-import com.rosshoyt.model.SequenceParser;
 
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Sequence;
@@ -136,7 +136,7 @@ public class Main {
          return;
       }
       System.out.println("Creating MidiParser");
-      SequenceParser midiParser = new SequenceParser(sequence);
+      MidiParser midiParser = new MidiParser(sequence);
 
       System.out.println("Parsing midi file " + sequenceName);
       midiParser.parseMidi();
