@@ -1,17 +1,14 @@
-package basic;
-import java.io.File;
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.*;
+package com.rosshoyt.model;
 import javax.sound.midi.MetaMessage;
 import javax.sound.midi.MidiEvent;
 import javax.sound.midi.MidiMessage;
-import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Sequence;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
+
+import com.rosshoyt.app.MidiDatabaseDAO;
+import com.rosshoyt.pojo.PPatchList;
+import com.rosshoyt.pojo.PSequence;
 
 
 public class MIDI_Parser {
@@ -27,6 +24,15 @@ public class MIDI_Parser {
    private int currentTrackNumber;
 
 
+   /**
+    * <Header Chunk> = <chunk type><length><format><ntrks><division>
+    */
+   protected enum MThd_Header_Key {
+
+   }
+   protected enum MTrk_Track_Key {
+
+   }
 
 
 	public MIDI_Parser(Sequence sequence, String sequenceName, MidiDatabaseDAO midiDAO) {
@@ -35,10 +41,36 @@ public class MIDI_Parser {
       currentSequenceID = midiDAO.addSequence(sequenceName);
       currentTrackNumber = 0;
 	}
+   public void parseMidi(){
+	   parseHeader();
+	   parseTracks();
+   }
 
-	public void parseMidi() {
+   /**
+    * Parses Header Chunk
+    * Reference - ALl header chunks follow this format-
+    * <Header Chunk> = <chunk type><length><format><ntrks><division>
+    */
+   private void parseHeader() {
+	   // TODO parse message against key for division type - should lead to more easy transaction handling
+      float divType = sequence.getDivisionType();
+
+	   int resolution = sequence.getResolution();
+	   long microsecond_length = sequence.getMicrosecondLength();
+	   long tick_length = sequence.getTickLength();
+	   int numTracks = sequence.getTracks().length; //will always be 1 for Format 0 Midi File
+      // TODO Parse actual message and compare against key with header to get midi file 'format'
 
 
+      //MidiUtils.
+	   //add entity patchlist
+	   PPatchList patchList = new PPatchList(sequence.getPatchList());
+
+	   PSequence pSequence = new PSequence();
+
+
+   }
+	private void parseTracks() {
 	   
 		for (Track track :  sequence.getTracks()) {
 
@@ -121,5 +153,6 @@ public class MIDI_Parser {
 
 
 	}
+
 
 }

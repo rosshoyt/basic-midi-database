@@ -1,4 +1,4 @@
-package basic;
+package com.rosshoyt.pw_utils;
 
 import java.io.BufferedReader;
 import java.io.IOException;

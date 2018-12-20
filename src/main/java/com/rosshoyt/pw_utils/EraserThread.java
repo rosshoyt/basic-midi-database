@@ -1,4 +1,4 @@
-package basic;
+package com.rosshoyt.pw_utils;
 
 public class EraserThread implements Runnable {
    private boolean stop;
