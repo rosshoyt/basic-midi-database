@@ -27,6 +27,7 @@ public class NoteOnQueue {
       } else{ //A Waiting Note On has already Been added for this note.
              // so add to end of list
          tempListBucket = hangingNotes.get(pitch);
+
          tempListBucket.add(new NoteBucket(sm));
 
       }

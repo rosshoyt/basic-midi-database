@@ -9,18 +9,19 @@ import javax.sound.midi.Track;
 import com.rosshoyt.app.MidiDatabaseDAO;
 import com.rosshoyt.pojo.PPatchList;
 import com.rosshoyt.pojo.PSequence;
+//import com.sun.org.apache.bcel.internal.generic.RETURN;
 
 
-public class MIDI_Parser {
+public class SequenceParser {
    //static refs
 	private static final int NOTE_ON = 0X90;
 	private static final int NOTE_OFF = 0x80;
 	private static final String[] NOTE_NAMES = {"C", "C#", "D", "D#", "E", "F", "F#", "G", "G#", "A", "A#", "B"};
    //global objects
 	private Sequence sequence;
-	private MidiDatabaseDAO midiDAO;
+
    //global vars
-	private int currentSequenceID;
+	//private int currentSequenceID; - will need to get from database, if need to have it here at all
    private int currentTrackNumber;
 
 
@@ -35,12 +36,11 @@ public class MIDI_Parser {
    }
 
 
-	public MIDI_Parser(Sequence sequence, String sequenceName, MidiDatabaseDAO midiDAO) {
+	public SequenceParser(Sequence sequence) {
 		this.sequence = sequence;
-      this.midiDAO = midiDAO;
-      currentSequenceID = midiDAO.addSequence(sequenceName);
       currentTrackNumber = 0;
 	}
+
    public void parseMidi(){
 	   parseHeader();
 	   parseTracks();
@@ -51,7 +51,7 @@ public class MIDI_Parser {
     * Reference - ALl header chunks follow this format-
     * <Header Chunk> = <chunk type><length><format><ntrks><division>
     */
-   private void parseHeader() {
+   public void parseHeader() {
 	   // TODO parse message against key for division type - should lead to more easy transaction handling
       float divType = sequence.getDivisionType();
 
@@ -63,24 +63,31 @@ public class MIDI_Parser {
 
 
       //MidiUtils.
-	   //add entity patchlist
-	   PPatchList patchList = new PPatchList(sequence.getPatchList());
+	   //add entity patchlist to db
+ 	   PPatchList patchList = new PPatchList(sequence.getPatchList());
 
 	   PSequence pSequence = new PSequence();
 
 
    }
-	private void parseTracks() {
-	   
-		for (Track track :  sequence.getTracks()) {
+	public TrackEventList[] parseTracks() {
+      Track[] tracks = sequence.getTracks();
 
+      System.out.println("Creating trackEventList array with space for " + tracks.length + "tracks");
+      TrackEventList[] trackEventListArray = new TrackEventList[tracks.length];
+
+		for (Track track :  tracks) {
 		   currentTrackNumber++;
-         System.out.println("Track " + currentTrackNumber + ": size = " + track.size());
+         //legacy debug code
+		   System.out.println("Track " + currentTrackNumber + ": size = " + track.size());
          System.out.println();
+
+         //create local track event list for curr track
+         trackEventListArray[currentTrackNumber-1] = new TrackEventList(currentTrackNumber);
+
 
 
          for (int i=0; i < track.size(); i++) {
-            System.out.println("connection status = " + midiDAO.getConnectionStatus());
             MidiEvent event = track.get(i);
 
             //PARAM:
@@ -142,16 +149,16 @@ public class MIDI_Parser {
 				} else {
 					System.out.println("Other message: " + message.getClass());
 				}
-				midiDAO.addMidiEvent(currentSequenceID, currentTrackNumber, evStart, messageType, channel, command, key, octave, noteNumber, noteName, velocity);
+				//midiDAO.addMidiEvent(currentSequenceID, currentTrackNumber, evStart, messageType, channel, command, key, octave, noteNumber, noteName, velocity);
          }
 
 			System.out.println();
 		}
 		//System.out.println(sequence.getPatchList());
-		System.out.println("Parse complete - closing Connection");
-		midiDAO.closeConnection();
+		System.out.println("Parse complete - returning track event list array");
+		//midiDAO.closeConnection();
 
-
+      return trackEventListArray;
 	}
 
 

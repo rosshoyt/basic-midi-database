@@ -20,5 +20,10 @@ public class PNote {
    int onVelocity;
 
 
+   public PNote(){
+
+   }
+
+
 
 }
