@@ -1,4 +1,4 @@
-package app;
+package com.rosshoyt.app;
 
 public class MidiException extends Throwable {
 }

@@ -1,4 +1,4 @@
-//package midi.musictools;
+//package com.rosshoyt.musictools;
 //
 //import java.util.ArrayList;
 //import java.util.HashMap;

@@ -1,4 +1,4 @@
-package app;
+package com.rosshoyt.app;
 
 import java.sql.SQLException;
 

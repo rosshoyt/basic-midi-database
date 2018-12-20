@@ -1,4 +1,4 @@
-package app;
+package com.rosshoyt.model;
 import javax.sound.midi.MetaMessage;
 import javax.sound.midi.MidiEvent;
 import javax.sound.midi.MidiMessage;
@@ -6,8 +6,9 @@ import javax.sound.midi.Sequence;
 import javax.sound.midi.ShortMessage;
 import javax.sound.midi.Track;
 
-import hibernate.pojo.PPatchList;
-import hibernate.pojo.PSequence;
+import com.rosshoyt.app.MidiDatabaseDAO;
+import com.rosshoyt.pojo.PPatchList;
+import com.rosshoyt.pojo.PSequence;
 
 
 public class MIDI_Parser {

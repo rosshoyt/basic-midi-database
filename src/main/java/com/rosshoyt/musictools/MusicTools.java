@@ -1,8 +1,5 @@
-package midi.musictools;
-import com.sun.media.sound.MidiUtils;
-import com.sun.org.apache.bcel.internal.generic.RETURN;
+package com.rosshoyt.musictools;
 
-import javax.sound.*;
 public class MusicTools {
 
 

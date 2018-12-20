@@ -1,12 +1,9 @@
-package app;
+package com.rosshoyt.model;
 
-import sun.jvm.hotspot.utilities.HashtableBucket;
+import com.rosshoyt.app.MissingMIDIDataException;
 
-import javax.sound.midi.InvalidMidiDataException;
 import javax.sound.midi.ShortMessage;
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Queue;
 import java.util.Hashtable;
 public class NoteOnQueue {
    private final static int SIZE = 128; //number of midi notes

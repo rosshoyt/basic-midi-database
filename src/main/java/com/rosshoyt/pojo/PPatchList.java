@@ -1,4 +1,4 @@
-package hibernate.pojo;
+package com.rosshoyt.pojo;
 import javax.sound.midi.Patch;
 public class PPatchList {
    private Patch[] patchList;

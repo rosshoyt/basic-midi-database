@@ -21,7 +21,7 @@
  * 51 Franklin Street, Fifth Floor
  * Boston, MA  02110-1301  USA
  */
-package hibernate.pojo;
+package com.rosshoyt.pojo;
 
 import java.util.Date;
 import javax.persistence.Column;

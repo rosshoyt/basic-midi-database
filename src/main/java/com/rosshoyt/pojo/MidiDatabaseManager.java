@@ -1,4 +1,4 @@
-package hibernate.pojo;
+package com.rosshoyt.pojo;
 
 public class MidiDatabaseManager {
 

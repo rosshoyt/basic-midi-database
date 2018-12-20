@@ -1,52 +1,66 @@
 
-package app;
+package com.rosshoyt.app;
 
 
 
 //import com.fasterxml.classmate.AnnotationConfiguration;
-import com.fasterxml.classmate.AnnotationConfiguration;
-import commandline.pw_utils.PasswordField;
-import org.hibernate.*;
-import org.hibernate.cfg.*;
+import com.rosshoyt.pw_utils.PasswordField;
+import com.rosshoyt.model.MIDI_Parser;
+
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Sequence;
 import java.io.File;
 import java.sql.SQLException;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
-import org.hibernate.*;
-import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
-import org.hibernate.engine.jdbc.connections.spi.ConnectionProvider;
-import org.hibernate.internal.SessionFactoryImpl;
 import javax.persistence.*;
-import org.hibernate.cfg.*;
-import org.hibernate.service.ServiceRegistry;
 
 public class Main {
-   private final String RESOURCES = "src/main/resources/";
-   private final String DRIVER = "com.mysql.jdbc.Driver";
-   private final String CONFIG = "hibernate.cfg.xml";
-   private String[] midiSrcFiles = new String[]{ RESOURCES + "pianocon.mid", RESOURCES + "la_mer_1.mid",
-         RESOURCES + "helloWorld.mid"};
+   private static final String RESOURCE_PATH = "src/main/resources/";
+   private static final String DRIVER = "com.mysql.jdbc.Driver";
+   private static final String CONFIG = "hibernate.cfg.xml";
+   private static String[] midiSrcFiles = new String[]{"pianocon.mid", "la_mer_1.mid",
+         "helloWorld.mid"};
 
    public static void main(String[] args) {
-      if(args.length > 0) {
+      if (args.length > 0) {
          //launch gui
       }
       //else launch
-      commandLineApp2();
-   }
-   public static void commandLineApp2(){
-      System.out.println("Welcome to the app midi database V2.0 - \n HIBERNATE EDITION!!!.");
-      //create connnection
-
-
-      SessionFactory sessionFactory;
-
-      sessionFactory = new AnnotationConfiguration()
-
+      commandLineAppHibernate();
    }
 
-   private static final SessionFactory sessionFactory;
+   public static void commandLineAppHibernate() {
+      System.out.println("Welcome to the basic midi database V2.0 - \n HIBERNATE EDITION!!!.");
+
+
+      //get connection properties (may need to prompt for password before putting properties)
+
+      Map<String, String> properties = new HashMap<>();
+      properties.put("javax.persistence.jdbc.user", "root");
+      properties.put("javax.persistence.jdbc.password", promptForPassword_EraseDisplay());
+      EntityManagerFactory emf = Persistence.createEntityManagerFactory(
+            "Basic-Midi-Database-Persistence-Unit", properties);
+
+      //ask for what midi file user would like to test (list available midi files or allow
+      //to add their own path
+
+
+      //pass midi file to MidiParser
+
+   }
+   /* SAMPLE TRANSACTION
+      em.getTransaction().begin();
+      Employee employee = new Employee();
+      employee.setName("Chandan");
+      System.out.println("COMIITING");
+      em.persist(employee);
+      em.getTransaction().commit();
+*/
+
+
+ /*  private static final SessionFactory sessionFactory;
    static {
       try {
          sessionFactory = new AnnotationConfiguration()
@@ -88,23 +102,19 @@ public class Main {
       return factoryObj;
    }
 
+*/
 
    /**
     * Static method which runs simple DAO interation of MIDI DB command line app.
     */
-   public static void commandLineApp1() {
+   public static void commandLineAppJDBC() {
       System.out.println("Welcome to the app midi database.");
-      String sequenceName = midiSrcFiles[2];
+      String sequenceName = getMidiFileResourcePath(2).toString();
 
       //object to pass to MidiParser
       MidiDatabaseDAO dao = new BasicMidiDatabaseDAO();
       Sequence sequence;
-      String password;
-
-      //password prompts
-      password = passwordPrompt_EraseDisplay();
-      //password = passwordPrompt_noMask();
-
+      String password = promptForPassword_EraseDisplay();
       //connect dao
       try {
          dao.createConnection("jdbc:mysql://localhost:3306/basicmididatabase", "root", password);
@@ -130,13 +140,14 @@ public class Main {
       midiParser.parseMidi();
 
    }
-/*
+
+   /*
     * Method which masks and reads in password on the command line.
     * DO NOT USE INSIDE IDE - BREAKS PROGRAM
     * @return password
     */
 
-   private static String passwordPrompt_EraseDisplay() {
+   private static String promptForPassword_EraseDisplay() {
       String password = PasswordField.readPassword("Enter password: ");
       //System.out.println("Password entered was:" + password);
       return password;
@@ -149,7 +160,7 @@ public class Main {
     * @return password
     */
 
-   private static String passwordPrompt_noMask() {
+   private static String promptForPassword_noMask() {
       //get password info
       Scanner scanner = new Scanner(System.in);
       String password = "";
@@ -157,5 +168,8 @@ public class Main {
       password = scanner.next();
       System.out.println();
       return password;
+   }
+   private static StringBuilder getMidiFileResourcePath(int index){
+      return new StringBuilder(midiSrcFiles[index] + RESOURCE_PATH);
    }
 }

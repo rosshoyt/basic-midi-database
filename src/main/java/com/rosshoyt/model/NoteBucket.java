@@ -1,4 +1,4 @@
-package app;
+package com.rosshoyt.model;
 
 
 import javax.sound.midi.ShortMessage;
