@@ -53,7 +53,7 @@ public class ModelRunner {
 
    public static void main(String[] args) {
       MidiParser midiParser;
-      String midiSrc = "src/main/resources/pianocon.mid";
+      String midiSrc = "src/main/resources/capone piano.mid";
       System.out.println("Test Starting");
       //create sequence parser with sequence
       try{
@@ -77,8 +77,7 @@ public class ModelRunner {
             System.out.println("PTrack #" + pt.getTrackNumber() +":");
             for(int j = 0; j < pt.getNumberPNotes(); j++){
                System.out.println(
-                     "         PNote #" + (j+1) +
-                           " Pitch = "+pt.getPNote(j).getKey());
+                     "         PNote #" + (j+1) + " " + pt.getPNote(j).toString());
             }
             System.out.println();
          }

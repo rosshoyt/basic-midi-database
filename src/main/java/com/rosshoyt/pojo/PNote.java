@@ -45,6 +45,7 @@ public class PNote {
       this.velocity = velocity;
    }
 
+
    public float getNote_start() {
       return note_start;
    }
@@ -125,8 +126,13 @@ public class PNote {
    public void setOffVelocity(int offVelocity) {
       this.offVelocity = offVelocity;
    }
+   @Override
+   public String toString(){
+      String p1 = (note_name != null) ? note_name + octave: "";
 
-
+      String p2 = (note_start != 0.0f && note_off != 0.0f) ? "On/off:" + note_start + "/" + note_off : "";
+      return  p1 + " " + p2;
+   }
 
 
 
