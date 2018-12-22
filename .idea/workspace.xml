@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d99834c4-a812-4ad3-87e1-7f333a77d460" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/AnnotationsIllustrationTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/app/AnnotationsIllustrationTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/BasicMidiDatabaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/app/BasicMidiDatabaseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/HBMain.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/MIDI_Parser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MIDI_Parser.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/app/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/MidiDatabaseDAO.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MidiDatabaseDAO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/MidiException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MidiException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/MissingMIDIDataException.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MissingMIDIDataException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/NoteBucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteBucket.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/app/NoteOnQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnQueue.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commandline/pw_utils/EraserThread.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pw_utils/EraserThread.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/commandline/pw_utils/PasswordField.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pw_utils/PasswordField.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate/pojo/Event_ExampleHB.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/Event_ExampleHB.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate/pojo/MidiDatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/MidiDatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate/pojo/PNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PNote.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate/pojo/PPatchList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PPatchList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate/pojo/PSequence.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PSequence.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hibernate/pojo/PTrack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PTrack.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/midi/musictools/Chord.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/musictools/Chord.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/midi/musictools/MusicTools.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/musictools/MusicTools.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MidiParser.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MidiParser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/ModelRunner.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/ModelRunner.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteBucket.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteBucket.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnWaitingList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnWaitingList.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PNote.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PNote.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -36,115 +18,190 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pom.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pom.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="105">
-              <caret line="7" column="27" selection-start-line="7" selection-start-column="27" selection-end-line="7" selection-end-column="27" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MusicTools.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/musictools/MusicTools.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="60">
-              <caret line="5" column="23" selection-start-line="5" selection-start-column="23" selection-end-line="5" selection-end-column="23" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MIDI_Parser.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MIDI_Parser.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoteOnQueue.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnQueue.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-              <folding>
-                <element signature="e#523#524#0" expanded="true" />
-                <element signature="e#568#569#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MissingMIDIDataException.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MissingMIDIDataException.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="persistence.xml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/META-INF/persistence.xml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="12" column="16" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="MidiDatabaseDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MidiDatabaseDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="NoteBucket.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteBucket.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="75">
-              <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/Main.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="267">
-              <caret line="49" column="36" selection-end-line="175" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="BasicMidiDatabaseDAO.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/BasicMidiDatabaseDAO.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
+    <splitter split-orientation="horizontal" split-proportion="0.39615384">
+      <split-first>
+        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+          <file leaf-file-name="TrackEventList.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/TrackEventList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NoteBucket.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteBucket.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="453">
+                  <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+                  <folding>
+                    <element signature="e#553#554#0" expanded="true" />
+                    <element signature="e#586#587#0" expanded="true" />
+                    <element signature="e#965#966#0" expanded="true" />
+                    <element signature="e#1001#1002#0" expanded="true" />
+                    <element signature="e#1041#1042#0" expanded="true" />
+                    <element signature="e#1081#1082#0" expanded="true" />
+                    <element signature="e#1099#1100#0" expanded="true" />
+                    <element signature="e#1137#1138#0" expanded="true" />
+                    <element signature="e#1162#1163#0" expanded="true" />
+                    <element signature="e#1180#1181#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PHeader.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PHeader.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="75">
+                  <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ModelRunner.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/ModelRunner.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="-137">
+                  <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/Main.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="150">
+                  <caret line="111" column="74" selection-start-line="111" selection-start-column="74" selection-end-line="111" selection-end-column="74" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="ModelTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/rosshoyt/model/ModelTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="480">
+                  <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="NoteOnQueueTest.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/test/java/com/rosshoyt/model/NoteOnQueueTest.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="383">
+                  <caret line="26" column="3" lean-forward="true" selection-start-column="2" selection-end-line="26" selection-end-column="3" />
+                  <folding>
+                    <element signature="e#0#518#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PSequence.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PSequence.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="285">
+                  <caret line="19" selection-start-line="19" selection-end-line="19" />
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="MidiParser.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MidiParser.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="205">
+                  <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-first>
+      <split-second>
+        <leaf>
+          <file leaf-file-name="NoteOnWaitingList.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnWaitingList.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="114">
+                  <caret line="6" selection-start-line="6" selection-end-line="6" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#592#593#0" expanded="true" />
+                    <element signature="e#643#644#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PTrack.java" pinned="false" current-in-tab="true">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PTrack.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="60">
+                  <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+          <file leaf-file-name="PNote.java" pinned="false" current-in-tab="false">
+            <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PNote.java">
+              <provider selected="true" editor-type-id="text-editor">
+                <state relative-caret-position="177">
+                  <caret line="132" column="15" selection-start-line="132" selection-start-column="15" selection-end-line="132" selection-end-column="15" />
+                  <folding>
+                    <element signature="imports" expanded="true" />
+                    <element signature="e#1029#1030#0" expanded="true" />
+                    <element signature="e#1059#1060#0" expanded="true" />
+                    <element signature="e#2263#2264#0" expanded="true" />
+                    <element signature="e#2293#2294#0" expanded="true" />
+                  </folding>
+                </state>
+              </provider>
+            </entry>
+          </file>
+        </leaf>
+      </split-second>
+    </splitter>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="JUnit5 Test Class" />
         <option value="Class" />
       </list>
     </option>
+  </component>
+  <component name="FindInProjectRecents">
+    <findStrings>
+      <find>midiDAO</find>
+      <find>track</find>
+      <find>pitch_of_note_on</find>
+      <find>note_on_message</find>
+      <find>&lt;ShortMessage&gt;</find>
+      <find>persistentTracks[currentTrackNumber - 1]</find>
+    </findStrings>
+    <replaceStrings>
+      <replace>pTrack</replace>
+      <replace>pitch</replace>
+      <replace>noteOnMessage</replace>
+      <replace>&lt;NoteBucket&gt;</replace>
+    </replaceStrings>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -182,7 +239,27 @@
         <option value="$PROJECT_DIR$/META-INF/persistence.xml" />
         <option value="$PROJECT_DIR$/src/main/java/app/Main.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/TrackParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MIDI_Parser.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/rosshoyt/modeltest/NoteOnQueueTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/rosshoyt/model/SequenceParserTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/SequenceParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/app/AnnotationsIllustrationTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnQueue.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/TrackEventList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/musictools/ChordInterface.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PSequence.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PHeader.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteStitcher.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/rosshoyt/model/NoteOnQueueTest.java" />
+        <option value="$PROJECT_DIR$/src/test/java/com/rosshoyt/model/ModelTest.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PTrack.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/app/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteBucket.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnWaitingList.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MidiParser.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PNote.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/rosshoyt/model/ModelRunner.java" />
       </list>
     </option>
   </component>
@@ -209,7 +286,7 @@
       <select />
     </treeState>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
+  <component name="ProjectFrameBounds">
     <option name="y" value="23" />
     <option name="width" value="1440" />
     <option name="height" value="877" />
@@ -233,6 +310,11 @@
               <item name="basicmididatabase-MVN" type="b2602c69:ProjectViewProjectNode" />
               <item name="basicmididatabase-MVN" type="462c0819:PsiDirectoryNode" />
               <item name="META-INF" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="basicmididatabase-MVN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="basicmididatabase-MVN" type="462c0819:PsiDirectoryNode" />
+              <item name="MySQL Assets" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="basicmididatabase-MVN" type="b2602c69:ProjectViewProjectNode" />
@@ -309,12 +391,36 @@
               <item name="basicmididatabase-MVN" type="b2602c69:ProjectViewProjectNode" />
               <item name="basicmididatabase-MVN" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="resources" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="basicmididatabase-MVN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="basicmididatabase-MVN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="basicmididatabase-MVN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="basicmididatabase-MVN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="basicmididatabase-MVN" type="b2602c69:ProjectViewProjectNode" />
+              <item name="basicmididatabase-MVN" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="test" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="model" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="PackagesPane">
         <subPane>
           <expand>
@@ -326,17 +432,27 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit5" />
+    <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5" value="" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="com.rosshoyt.model" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.rosshoyt" />
+      <recent name="com.rosshoyt.model" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
+    </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="app" />
     </key>
@@ -353,7 +469,41 @@
       </list>
     </option>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="Application.ModelRunner">
+    <configuration name="ModelTest" type="AndroidJUnit" factoryName="Android JUnit" temporary="true" nameIsGenerated="true">
+      <module name="basicmididatabase-MVN" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rosshoyt.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="com.rosshoyt.model" />
+      <option name="MAIN_CLASS_NAME" value="com.rosshoyt.model.ModelTest" />
+      <option name="METHOD_NAME" />
+      <option name="TEST_OBJECT" value="class" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="singleModule" />
+      </option>
+      <patterns />
+    </configuration>
+    <configuration name="ModelRunner" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.rosshoyt.model.ModelRunner" />
+      <module name="basicmididatabase-MVN" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.rosshoyt.model.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+    </configuration>
     <configuration default="true" type="Application" factoryName="Application">
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
     </configuration>
@@ -395,6 +545,16 @@
       <properties />
       <listeners />
     </configuration>
+    <list>
+      <item itemvalue="Android JUnit.ModelTest" />
+      <item itemvalue="Application.ModelRunner" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.ModelRunner" />
+        <item itemvalue="Android JUnit.ModelTest" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -409,116 +569,74 @@
     </task>
     <servers />
   </component>
+  <component name="TestHistory">
+    <history-entry file="ModelTest - 2018.12.19 at 20h 29m 00s.xml">
+      <configuration name="ModelTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="ModelTest - 2018.12.19 at 20h 30m 16s.xml">
+      <configuration name="ModelTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="ModelTest - 2018.12.19 at 20h 30m 29s.xml">
+      <configuration name="ModelTest" configurationId="AndroidJUnit" />
+    </history-entry>
+    <history-entry file="ModelTest - 2018.12.19 at 20h 31m 03s.xml">
+      <configuration name="ModelTest" configurationId="AndroidJUnit" />
+    </history-entry>
+  </component>
+  <component name="TodoView">
+    <todo-panel id="selected-file">
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+    <todo-panel id="all">
+      <are-packages-shown value="true" />
+      <is-autoscroll-to-source value="true" />
+    </todo-panel>
+  </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1440" height="877" extended-state="6" />
+    <frame x="0" y="23" width="1440" height="877" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info id="DB Browser" order="2" />
+      <window_info anchor="bottom" id="TODO" order="6" sideWeight="0.49928468" weight="0.0" />
+      <window_info id="DB Browser" order="2" weight="0.1874106" />
+      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.49427754" weight="0.32948717" />
       <window_info anchor="right" id="Palette&#9;" order="3" />
       <window_info id="Image Layers" order="2" />
       <window_info anchor="bottom" id="DB Execution Console" order="7" />
       <window_info anchor="right" id="Capture Analysis" order="3" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.50500715" side_tool="true" visible="true" weight="0.32948717" />
-      <window_info anchor="right" id="Maven Projects" order="3" sideWeight="0.49739584" visible="true" weight="0.065808296" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.2639485" side_tool="true" visible="true" weight="0.41923076" />
+      <window_info anchor="right" id="Maven Projects" order="3" sideWeight="0.49739584" visible="true" weight="0.057939913" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Run" order="2" />
-      <window_info anchor="bottom" id="Thumbnails" sideWeight="0.49928468" weight="0.42820513" />
+      <window_info anchor="bottom" id="Run" order="2" sideWeight="0.7360515" weight="0.41923076" />
       <window_info anchor="bottom" id="Terminal" order="7" sideWeight="0.49713877" weight="0.020512821" />
       <window_info id="Capture Tool" order="2" />
       <window_info id="Designer" order="2" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3397711" />
-      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49499285" weight="0.32948717" />
-      <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.49889624" visible="true" weight="0.1981402" />
+      <window_info anchor="bottom" id="Find" order="1" sideWeight="0.49356222" weight="0.21410257" />
+      <window_info id="Structure" order="1" sideWeight="0.50110376" side_tool="true" visible="true" weight="0.1981402" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info id="UI Designer" order="2" />
       <window_info anchor="right" id="Theme Preview" order="3" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="right" x="0" y="0" width="310" height="677" id="Documentation" order="4" sideWeight="0.5026042" side_tool="true" weight="0.28540772" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="Messages" order="7" sideWeight="0.4985694" weight="0.2025641" />
+      <window_info anchor="bottom" id="Thumbnails" order="8" sideWeight="0.4985694" weight="0.42820513" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="right" x="0" y="0" width="310" height="677" id="Documentation" order="4" sideWeight="0.5026042" side_tool="true" weight="0.28540772" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
     </layout>
   </component>
   <component name="VcsContentAnnotationSettings">
     <option name="myLimit" value="2678400000" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <option name="time" value="1" />
+    </breakpoint-manager>
+  </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MIDI_Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="10" selection-start-line="10" selection-end-line="10" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MissingMIDIDataException.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteBucket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="525">
-          <caret line="35" column="32" selection-start-line="35" selection-start-column="32" selection-end-line="35" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MidiDatabaseDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/Event_ExampleHB.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="39" column="20" selection-start-line="39" selection-start-column="20" selection-end-line="39" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="27" column="50" selection-start-line="27" selection-start-column="50" selection-end-line="27" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/META-INF/persistence.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="104" selection-start-line="11" selection-start-column="104" selection-end-line="11" selection-end-column="104" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="855">
-          <caret line="57" column="19" selection-start-line="57" selection-start-column="19" selection-end-line="57" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/musictools/MusicTools.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
@@ -526,7 +644,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MIDI_Parser.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MidiParser.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="10" selection-start-line="10" selection-end-line="10" />
@@ -536,17 +654,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="10" column="13" selection-start-line="10" selection-start-column="13" selection-end-line="10" selection-end-column="13" />
-          <folding>
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnQueue.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MissingMIDIDataException.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
@@ -598,13 +706,6 @@
     <entry file="file://$PROJECT_DIR$/src/main/MidiDatabaseDAO.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/midi/pojo/midi/tools.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/persistence/pojo/MidiEvent.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PTrack.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PPatchList.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -613,27 +714,6 @@
             <element signature="e#188#189#0" expanded="true" />
             <element signature="e#226#227#0" expanded="true" />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PSequence.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="210">
-          <caret line="14" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/MidiDatabaseManager.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" selection-start-line="3" selection-end-line="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PNote.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="24" selection-start-line="6" selection-start-column="24" selection-end-line="6" selection-end-column="24" />
         </state>
       </provider>
     </entry>
@@ -674,13 +754,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/TestApp.java" />
     <entry file="file://$PROJECT_DIR$/src/main/resources/hibernate.cfg.xml" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteBucket.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="13" selection-start-line="5" selection-start-column="13" selection-end-line="5" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/musictools/MusicTools.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -692,17 +765,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="13" selection-start-line="2" selection-start-column="13" selection-end-line="2" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnQueue.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
-          <folding>
-            <element signature="e#523#524#0" expanded="true" />
-            <element signature="e#568#569#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -720,34 +782,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/HBMain.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" selection-start-line="9" selection-end-line="9" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/HBMain.java" />
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/BasicMidiDatabaseDAO.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
+        <state relative-caret-position="120">
           <caret line="10" column="27" selection-start-line="10" selection-start-column="27" selection-end-line="10" selection-end-column="27" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MidiDatabaseDAO.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MIDI_Parser.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="39" column="29" lean-forward="true" selection-start-line="39" selection-start-column="29" selection-end-line="39" selection-end-column="29" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -761,10 +800,153 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/TrackParser.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/AnnotationsIllustrationTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="630">
+          <caret line="42" column="56" selection-start-line="42" selection-start-column="56" selection-end-line="42" selection-end-column="56" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/MidiDatabaseDAO.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="3" selection-start-line="6" selection-start-column="3" selection-end-line="6" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnQueue.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/musictools/ChordInterface.java" />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PHeader.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="5" column="16" selection-start-line="5" selection-start-column="16" selection-end-line="5" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/MidiDatabaseManager.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="45">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/rosshoyt/model/ModelTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="480">
+          <caret line="32" column="20" lean-forward="true" selection-start-line="32" selection-start-column="20" selection-end-line="32" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/com/rosshoyt/model/NoteOnQueueTest.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="26" column="3" lean-forward="true" selection-start-column="2" selection-end-line="26" selection-end-column="3" />
+          <folding>
+            <element signature="e#0#518#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PSequence.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="285">
+          <caret line="19" selection-start-line="19" selection-end-line="19" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/TrackEventList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" column="20" lean-forward="true" selection-start-line="10" selection-start-column="20" selection-end-line="10" selection-end-column="20" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteBucket.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="453">
+          <caret line="55" column="24" selection-start-line="55" selection-start-column="24" selection-end-line="55" selection-end-column="24" />
+          <folding>
+            <element signature="e#553#554#0" expanded="true" />
+            <element signature="e#586#587#0" expanded="true" />
+            <element signature="e#965#966#0" expanded="true" />
+            <element signature="e#1001#1002#0" expanded="true" />
+            <element signature="e#1041#1042#0" expanded="true" />
+            <element signature="e#1081#1082#0" expanded="true" />
+            <element signature="e#1099#1100#0" expanded="true" />
+            <element signature="e#1137#1138#0" expanded="true" />
+            <element signature="e#1162#1163#0" expanded="true" />
+            <element signature="e#1180#1181#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/NoteOnWaitingList.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="6" selection-start-line="6" selection-end-line="6" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#592#593#0" expanded="true" />
+            <element signature="e#643#644#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PNote.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="177">
+          <caret line="132" column="15" selection-start-line="132" selection-start-column="15" selection-end-line="132" selection-end-column="15" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1029#1030#0" expanded="true" />
+            <element signature="e#1059#1060#0" expanded="true" />
+            <element signature="e#2263#2264#0" expanded="true" />
+            <element signature="e#2293#2294#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/MidiParser.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="157" lean-forward="true" selection-start-line="157" selection-end-line="157" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/pojo/PTrack.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" lean-forward="true" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/model/ModelRunner.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-137">
+          <caret line="55" column="55" selection-start-line="55" selection-start-column="55" selection-end-line="55" selection-end-column="55" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/rosshoyt/app/Main.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="49" column="36" selection-end-line="175" />
+        <state relative-caret-position="150">
+          <caret line="111" column="74" selection-start-line="111" selection-start-column="74" selection-end-line="111" selection-end-column="74" />
         </state>
       </provider>
     </entry>

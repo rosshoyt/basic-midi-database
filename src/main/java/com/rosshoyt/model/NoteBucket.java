@@ -7,35 +7,33 @@ public class NoteBucket{
    /**
     * The ShortMessage Entry
     */
-   private ShortMessage note_on_message;
-
+   private ShortMessage noteOnMessage;
+   
+   private long eventStart;
    /**
     * Assignable Reference to next ShortMessage -
     * indicates list end if null
     */
-   public ShortMessage next;
+   //public ShortMessage next;
    /**
     * Assignable Reference to previous ShortMessage -
     * indicates list Start if is set to null
     */
-   public ShortMessage prev;
+   //public ShortMessage prev;
    /**
     * No-Args NoteBucket Constructor
     */
    public NoteBucket(){
-      note_on_message = null;
-      next = null;
-      prev = null;
+      noteOnMessage = null;
    }
 
    /**
     * NoteBucket Constructor which accepts shortmessage
     * @param sm
     */
-   public NoteBucket(ShortMessage sm){
-      this.note_on_message = sm;
-      next = null;
-      prev = null;
+   public NoteBucket(ShortMessage sm, long eventStart){
+      this.noteOnMessage = sm;
+      this.eventStart = eventStart;
    }
 
    /**
@@ -43,14 +41,19 @@ public class NoteBucket{
     * @param sm ShortMessage to set in Bucket
     */
    public void setShortMessage(ShortMessage sm){
-      this.note_on_message = sm;
+      this.noteOnMessage = sm;
    }
-
+   public void setEventStart(long eventStart){
+      this.eventStart = eventStart;
+   }
    /**
     * @return ShortMessage in the Bucket
     */
    public ShortMessage getShortMessage(){
-      return this.note_on_message;
+      return this.noteOnMessage;
+   }
+   public long getEventStart(){
+      return eventStart;
    }
 
 

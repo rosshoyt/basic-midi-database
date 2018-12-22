@@ -4,8 +4,8 @@ package com.rosshoyt.app;
 
 
 //import com.fasterxml.classmate.AnnotationConfiguration;
+import com.rosshoyt.model.MidiParser;
 import com.rosshoyt.pw_utils.PasswordField;
-import com.rosshoyt.model.MIDI_Parser;
 
 import javax.sound.midi.MidiSystem;
 import javax.sound.midi.Sequence;
@@ -17,11 +17,13 @@ import java.util.Scanner;
 import javax.persistence.*;
 
 public class Main {
+   //midi file info
    private static final String RESOURCE_PATH = "src/main/resources/";
-   private static final String DRIVER = "com.mysql.jdbc.Driver";
-   private static final String CONFIG = "hibernate.cfg.xml";
    private static String[] midiSrcFiles = new String[]{"pianocon.mid", "la_mer_1.mid",
          "helloWorld.mid"};
+   //connection info
+   private static final String DRIVER = "com.mysql.jdbc.Driver";
+   private static final String CONFIG = "hibernate.cfg.xml";
 
    public static void main(String[] args) {
       if (args.length > 0) {
@@ -107,7 +109,7 @@ public class Main {
    /**
     * Static method which runs simple DAO interation of MIDI DB command line app.
     */
-   public static void commandLineAppJDBC() {
+   public static void commandLineAppJDBC() throws MissingMIDIDataException{
       System.out.println("Welcome to the app midi database.");
       String sequenceName = getMidiFileResourcePath(2).toString();
 
@@ -134,7 +136,7 @@ public class Main {
          return;
       }
       System.out.println("Creating MidiParser");
-      MIDI_Parser midiParser = new MIDI_Parser(sequence, sequenceName, dao);
+      MidiParser midiParser = new MidiParser(sequence);
 
       System.out.println("Parsing midi file " + sequenceName);
       midiParser.parseMidi();
