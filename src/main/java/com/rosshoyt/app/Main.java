@@ -109,7 +109,7 @@ public class Main {
    /**
     * Static method which runs simple DAO interation of MIDI DB command line app.
     */
-   public static void commandLineAppJDBC() {
+   public static void commandLineAppJDBC() throws MissingMIDIDataException{
       System.out.println("Welcome to the app midi database.");
       String sequenceName = getMidiFileResourcePath(2).toString();
 

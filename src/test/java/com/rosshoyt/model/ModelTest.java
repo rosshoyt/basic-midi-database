@@ -11,23 +11,19 @@ class ModelTest {
    TrackEventList[] trackEventLists;
 
 
-   NoteOnQueue noteOnQueue;
-   NoteStitcher noteStitcher;
 
    String midiSrc = "src/main/resources/helloWorld.mid";
-   @BeforeEach
+  // @BeforeEach
    void setUp() throws InvalidMidiDataException {
 
 
       //init vars TODO init as fields? && Setup test properly w/ annotations\ etc
-      noteOnQueue = new NoteOnQueue();
-      noteStitcher = new NoteStitcher();
 
 
 
 
       System.out.println("Testing parse tracks");
-      trackEventLists = midiParser.parseTracks();
+
 
    }
 
