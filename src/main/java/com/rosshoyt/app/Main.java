@@ -1,26 +1,17 @@
 package com.rosshoyt.app;
-import com.rosshoyt.model.MidiParser;
 import com.rosshoyt.model.ModelRunner;
-import com.rosshoyt.persistance.hibernate.HibernateUtil;
+import com.rosshoyt.pojo.HibernateUtil;
 import com.rosshoyt.pojo.PTrack;
 import com.rosshoyt.pw_utils.PasswordField;
 
-import javax.sound.midi.MidiSystem;
-import javax.sound.midi.Sequence;
 import java.io.File;
-import java.sql.SQLException;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Properties;
 import java.util.Scanner;
-import javax.persistence.*;
-import javafx.application.*;
-import javafx.stage.Stage;
-import org.hibernate.Hibernate;
+
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 
-public class Main extends Application {
+public class Main {
    //midi file info
    private static final String RESOURCE_PATH = "src/main/resources/";
    private static String[] midiSrcFiles = new String[]{"pianocon.mid", "la_mer_1.mid",
@@ -32,22 +23,21 @@ public class Main extends Application {
 
    public static void main(String[] args) {
       if (args.length > 0) {
-         launch(args);
+         //launch(args);
+         System.out.println("This would be JAVA FX APP (args>0)");
       }
       //else launch commandline
       commandLineApp();
    }
-
-   @Override
-   public void start(Stage primaryStage) {
-
-   }
+//   @Override
+//   public void start(Stage primaryStage) {}
 
    public static void commandLineApp() {
       scanner = new Scanner(System.in);
       SessionFactory sessionFactory;
-      HibernateUtil hibernateUtil = new HibernateUtil();
       Properties properties = new Properties();
+      HibernateUtil hibernateUtil = new HibernateUtil();
+
       ModelRunner modelRunner = new ModelRunner();
       String midiSrc = "/Users/RossHoyt/IdeaProjects/basicmididatabase-MVN/src/main/resources/helloWorld.mid";
 
@@ -60,7 +50,9 @@ public class Main extends Application {
       String dbPasswordPrompt = "Enter your database password: ";
 
 
-      //START {COMMAND LINE APP}
+      /************************
+       {START COMMAND LINE APP}
+       ************************/
       System.out.println(welcomeMsg);
       //Set file -
       System.out.println("Setting file");
@@ -85,10 +77,8 @@ public class Main extends Application {
 
       System.out.println("\nSetting JPA connection properties...");
       /*
-      set JPA connection properties
+      set Hibernate Config connection properties
        */
-      //Map<String, String> properties = new HashMap<>();
-
       properties.put("javax.persistence.jdbc.url", dbURL + dbName);
       properties.put("javax.persistence.jdbc.user", dbUsername);
       properties.put("javax.persistence.jdbc.password", pw);
@@ -96,6 +86,7 @@ public class Main extends Application {
       //Hibernate Code
       System.out.println("Creating Session Factory...");
       sessionFactory = hibernateUtil.createSessionFactory(properties);
+
       System.out.println("Creating Session");
       Session session = sessionFactory.openSession();
       System.out.println("Starting Transaction");

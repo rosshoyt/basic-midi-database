@@ -30,12 +30,12 @@
 
         <!-- Because this is a web app, we also have a dependency on the servlet api. -->
         <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
-        <dependency>
+        <!--dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <version>4.0.1</version>
             <scope>provided</scope>
-        </dependency>
+        </dependency-->
 
         <!-- Hibernate uses slf4j for logging, for our purposes here use the simple backend -->
         <!-- https://mvnrepository.com/artifact/org.slf4j/slf4j-api -->

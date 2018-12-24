@@ -20,5 +20,5 @@ com/rosshoyt/app/MissingMIDIDataException.class
 com/rosshoyt/persistance/jpa/Dao.class
 com/rosshoyt/app/BasicMidiDatabaseDAO.class
 com/rosshoyt/pw_utils/PasswordField.class
+com/rosshoyt/pojo/HibernateUtil.class
 com/rosshoyt/pojo/PNote.class
-com/rosshoyt/pojo/Event_ExampleHB.class

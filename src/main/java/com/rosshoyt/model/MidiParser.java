@@ -177,13 +177,14 @@ public class MidiParser {
                //try {
                NoteBucket noteOn = noteOnWaitingList.getNoteOnFROMOff(sm);
                pNote = new PNote(noteOn.getShortMessage().getData1(), noteOn.getShortMessage().getData2());
-               pNote.setNote_start(noteOn.getEventStart());
-               pNote.setNote_off(evStart);
-               pNote.setChannelNumber(channel);
-               pNote.setNote_name(noteName);
-               pNote.setOnVelocity(sm.getData1());
-               pNote.setOffVelocity(velocity);
-               pNote.setOctave(sm.getData2());
+               pNote.setNote_On(noteOn.getEventStart());
+               pNote.setNote_Off(evStart);
+               pNote.setKey(key);
+               //pNote.setChannelNumber(channel);
+               //pNote.setNote_name(noteName);
+               //pNote.setOnVelocity(sm.getData1());
+               ///pNote.setOffVelocity(velocity);
+               //pNote.setOctave(sm.getData2());
 
                pNote.setTrackNumber(currentTrackNumber);
 

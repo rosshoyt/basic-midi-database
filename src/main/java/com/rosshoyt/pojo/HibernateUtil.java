@@ -1,4 +1,4 @@
-package com.rosshoyt.persistance.hibernate;
+package com.rosshoyt.pojo;
 
 import com.fasterxml.classmate.AnnotationConfiguration;
 import com.rosshoyt.pojo.PNote;

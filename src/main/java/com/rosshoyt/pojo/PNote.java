@@ -1,40 +1,38 @@
 package com.rosshoyt.pojo;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Table;
-import javax.persistence.Id;
+import org.hibernate.annotations.GenericGenerator;
+
+import javax.persistence.*;
 import javax.sound.midi.ShortMessage;
 
 @Entity
-@Table (name = "Notes")
+@Table (name = "PNotes")
 public class PNote {
 
-   @Id
-   @GeneratedValue(strategy=GenerationType.AUTO)
-   private long noteID;
 
-   float note_start;
-   float note_off;
-   int trackNumber;
-   int channelNumber;
+   private int noteID;
 
-   int velocity;
-   int key;
+   private float note_on;
+   private float note_off;
+   private int trackNumber;
+//   private int channelNumber;
+
+   private int velocity;
+   private int key;
 
    //derived attributes
-   int octave;
-   int dodecaphonic_interval;
-   String note_name;
+   /*
+   private int octave;
+   private int dodecaphonic_interval;
+   private String note_name;
 
-   int onVelocity;
-   int offVelocity;
+   private int onVelocity;
+   private int offVelocity;
+*/
+   public PNote(){}
 
-   protected PNote(){}
-
-   public PNote(float note_start, float note_off, int key, int velocity, int trackNumber){
-     this.note_start = note_start;
+   public PNote(float note_on, float note_off, int key, int velocity, int trackNumber){
+     this.note_on = note_on;
      this.note_off = note_off;
      this.key = key;
      this.velocity = velocity;
@@ -45,23 +43,35 @@ public class PNote {
       this.velocity = velocity;
    }
 
+   public void setNoteID(){
+      this.noteID = noteID;
+   }
+   /*@GeneratedValue(generator="increment")
+   @GenericGenerator(name="increment", strategy = "increment")*/
 
-   public float getNote_start() {
-      return note_start;
+   @Id
+   @GeneratedValue(strategy=GenerationType.AUTO)
+   public int getNoteID(){
+      return this.noteID;
    }
 
-   public void setNote_start(float note_start) {
-      this.note_start = note_start;
+   @Column(name = "NOTE_ON")
+   public float getNote_On() {
+      return note_on;
    }
 
-   public float getNote_off() {
+   public void setNote_On(float note_on) {
+      this.note_on = note_on;
+   }
+   @Column(name = "NOTE_OFF")
+   public float getNote_Off() {
       return note_off;
    }
 
-   public void setNote_off(float note_off) {
+   public void setNote_Off(float note_off) {
       this.note_off = note_off;
    }
-
+   @Column (name = "TRACK_NUMBER")
    public int getTrackNumber() {
       return trackNumber;
    }
@@ -70,20 +80,20 @@ public class PNote {
       this.trackNumber = trackNumber;
    }
 
+   public int getKey() {
+      return key;
+   }
+   @Column(name = "KEY")
+   public void setKey(int key) {
+      this.key = key;
+   }
+   /*
    public int getChannelNumber() {
       return channelNumber;
    }
 
    public void setChannelNumber(int channelNumber) {
       this.channelNumber = channelNumber;
-   }
-
-   public int getKey() {
-      return key;
-   }
-
-   public void setKey(int key) {
-      this.key = key;
    }
 
    public int getOctave() {
@@ -130,10 +140,8 @@ public class PNote {
    public String toString(){
       String p1 = (note_name != null) ? note_name + octave: "";
 
-      String p2 = (note_start != 0.0f && note_off != 0.0f) ? "On/off:" + note_start + "/" + note_off : "";
+      String p2 = (note_on != 0.0f && note_off != 0.0f) ? "On/off:" + note_on + "/" + note_off : "";
       return  p1 + " " + p2;
    }
-
-
-
+*/
 }
