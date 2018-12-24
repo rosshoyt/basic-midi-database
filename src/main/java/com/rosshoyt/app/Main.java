@@ -1,6 +1,7 @@
 package com.rosshoyt.app;
 import com.rosshoyt.model.MidiParser;
 import com.rosshoyt.model.ModelRunner;
+import com.rosshoyt.persistance.hibernate.HibernateUtil;
 import com.rosshoyt.pojo.PTrack;
 import com.rosshoyt.pw_utils.PasswordField;
 
@@ -10,10 +11,14 @@ import java.io.File;
 import java.sql.SQLException;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Properties;
 import java.util.Scanner;
 import javax.persistence.*;
 import javafx.application.*;
 import javafx.stage.Stage;
+import org.hibernate.Hibernate;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
 
 public class Main extends Application {
    //midi file info
@@ -40,6 +45,9 @@ public class Main extends Application {
 
    public static void commandLineApp() {
       scanner = new Scanner(System.in);
+      SessionFactory sessionFactory;
+      HibernateUtil hibernateUtil = new HibernateUtil();
+      Properties properties = new Properties();
       ModelRunner modelRunner = new ModelRunner();
       String midiSrc = "/Users/RossHoyt/IdeaProjects/basicmididatabase-MVN/src/main/resources/helloWorld.mid";
 
@@ -79,25 +87,20 @@ public class Main extends Application {
       /*
       set JPA connection properties
        */
-      Map<String, String> properties = new HashMap<>();
+      //Map<String, String> properties = new HashMap<>();
+
       properties.put("javax.persistence.jdbc.url", dbURL + dbName);
       properties.put("javax.persistence.jdbc.user", dbUsername);
       properties.put("javax.persistence.jdbc.password", pw);
 
-      //JPA Code
-      System.out.println("Creating Entity Manager Factory...");
-      EntityManagerFactory emf = Persistence.createEntityManagerFactory(
-            "Basic-Midi-Database-Persistence-Unit", properties);
-
-      System.out.print("Creating Entity Manager...");
-      EntityManager em = emf.createEntityManager();
-      System.out.print("EM Status = " + (em.isOpen() ? "Is Open\n":"Is Closed\n"));
-
+      //Hibernate Code
+      System.out.println("Creating Session Factory...");
+      sessionFactory = hibernateUtil.createSessionFactory(properties);
+      System.out.println("Creating Session");
+      Session session = sessionFactory.openSession();
+      System.out.println("Starting Transaction");
+      session.beginTransaction();
       PTrack[] pTracks;
-      System.out.println();
-
-      System.out.println("Beginning Transaction");
-      em.getTransaction().begin();
       try {
          System.out.println("Parsing midi file");
          pTracks = modelRunner.parseTracks();
@@ -107,14 +110,47 @@ public class Main extends Application {
          for(int i= 0; i < pTracks.length; i++) {
             PTrack pt = pTracks[i];
             for (int j = 0; j < pt.getNumberPNotes(); j++) {
-               em.persist(pt.getPNote(j));
+               session.save(pt.getPNote(j));
             }
          }
       } catch(Exception e){
          e.printStackTrace();
       }
       System.out.println("Committing Transaction");
-      em.getTransaction().commit();
+      session.getTransaction().commit();
+      session.close();
+
+//      //JPA Code
+
+//      EntityManagerFactory emf = Persistence.createEntityManagerFactory(
+//            "Basic-Midi-Database-Persistence-Unit", properties);
+//
+//      System.out.print("Creating Entity Manager...");
+//      EntityManager em = emf.createEntityManager();
+//      System.out.print("EM Status = " + (em.isOpen() ? "Is Open\n":"Is Closed\n"));
+//
+//      PTrack[] pTracks;
+//      System.out.println();
+//
+//      System.out.println("Beginning Transaction");
+//      em.getTransaction().begin();
+//      try {
+//         System.out.println("Parsing midi file");
+//         pTracks = modelRunner.parseTracks();
+//         displayResults(pTracks);
+//         System.out.println("Persisting the Notes");
+//
+//         for(int i= 0; i < pTracks.length; i++) {
+//            PTrack pt = pTracks[i];
+//            for (int j = 0; j < pt.getNumberPNotes(); j++) {
+//               em.persist(pt.getPNote(j));
+//            }
+//         }
+//      } catch(Exception e){
+//         e.printStackTrace();
+//      }
+//      System.out.println("Committing Transaction");
+//      em.getTransaction().commit();
 
 
       /* SAMPLE TRANSACTION
