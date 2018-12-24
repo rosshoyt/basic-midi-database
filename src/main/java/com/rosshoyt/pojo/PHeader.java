@@ -3,14 +3,14 @@ package com.rosshoyt.pojo;
 import javax.persistence.Entity;
 @Entity
 public class PHeader {
-   String title;
-   String notes;
-   String copyrightInfo;
-   float divType;
-   int resolution;
-   long microsecond_length;
-   long tick_length;
-   int numTracks;
+   private String title;
+   private String notes;
+   private String copyrightInfo;
+   private float divType;
+   private int resolution;
+   private long microsecond_length;
+   private long tick_length;
+   private int numTracks;
    public PHeader(float divType, int resolution, long microsecond_length, long tick_length, int numTracks){
       title = "";
       notes = "";

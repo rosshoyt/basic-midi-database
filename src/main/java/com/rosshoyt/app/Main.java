@@ -1,10 +1,7 @@
-
 package com.rosshoyt.app;
-
-
-
-//import com.fasterxml.classmate.AnnotationConfiguration;
 import com.rosshoyt.model.MidiParser;
+import com.rosshoyt.model.ModelRunner;
+import com.rosshoyt.pojo.PTrack;
 import com.rosshoyt.pw_utils.PasswordField;
 
 import javax.sound.midi.MidiSystem;
@@ -15,8 +12,10 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 import javax.persistence.*;
+import javafx.application.*;
+import javafx.stage.Stage;
 
-public class Main {
+public class Main extends Application {
    //midi file info
    private static final String RESOURCE_PATH = "src/main/resources/";
    private static String[] midiSrcFiles = new String[]{"pianocon.mid", "la_mer_1.mid",
@@ -24,35 +23,101 @@ public class Main {
    //connection info
    private static final String DRIVER = "com.mysql.jdbc.Driver";
    private static final String CONFIG = "hibernate.cfg.xml";
+   private static Scanner scanner;
 
    public static void main(String[] args) {
       if (args.length > 0) {
-         //launch gui
+         launch(args);
       }
-      //else launch
-      commandLineAppHibernate();
+      //else launch commandline
+      commandLineApp();
    }
 
-   public static void commandLineAppHibernate() {
-      System.out.println("Welcome to the basic midi database V2.0 - \n HIBERNATE EDITION!!!.");
+   @Override
+   public void start(Stage primaryStage) {
+
+   }
+
+   public static void commandLineApp() {
+      scanner = new Scanner(System.in);
+      ModelRunner modelRunner = new ModelRunner();
+      String midiSrc = "/Users/RossHoyt/IdeaProjects/basicmididatabase-MVN/src/main/resources/helloWorld.mid";
+
+      //connection params
+      String dbURL = "jdbc:mysql://localhost/";
+      String welcomeMsg = "Welcome to the basic midi database V2.0 - \nHIBERNATE EDITION!!!\n"
+            + "The midi file being used: " + midiSrc;
+      String dbNamePrompt = "Enter the name of the database: ";
+      String dbUsernamePrompt = "Enter your database username: ";
+      String dbPasswordPrompt = "Enter your database password: ";
 
 
-      //get connection properties (may need to prompt for password before putting properties)
+      //START {COMMAND LINE APP}
+      System.out.println(welcomeMsg);
+      //Set file -
+      System.out.println("Setting file");
+      //could ask for file name/path in above- hardcoded for now
+      try {
+         File file = new File(midiSrc);
+         modelRunner.setFile(file);
+      } catch (Exception e) {
+         e.printStackTrace();
+         return;
+      }
 
+      /*
+      Connection Data Prompts
+       */
+      System.out.println(dbNamePrompt);
+      String dbName = scanner.next();
+      System.out.println("\n" + dbUsernamePrompt);
+      String dbUsername = scanner.next();
+      String pw = promptForPassword_EraseDisplay("\n" + dbPasswordPrompt);
+
+
+      System.out.println("\nSetting JPA connection properties...");
+      /*
+      set JPA connection properties
+       */
       Map<String, String> properties = new HashMap<>();
-      properties.put("javax.persistence.jdbc.user", "root");
-      properties.put("javax.persistence.jdbc.password", promptForPassword_EraseDisplay());
+      properties.put("javax.persistence.jdbc.url", dbURL + dbName);
+      properties.put("javax.persistence.jdbc.user", dbUsername);
+      properties.put("javax.persistence.jdbc.password", pw);
+
+      //JPA Code
+      System.out.println("Creating Entity Manager Factory...");
       EntityManagerFactory emf = Persistence.createEntityManagerFactory(
             "Basic-Midi-Database-Persistence-Unit", properties);
 
-      //ask for what midi file user would like to test (list available midi files or allow
-      //to add their own path
+      System.out.print("Creating Entity Manager...");
+      EntityManager em = emf.createEntityManager();
+      System.out.print("EM Status = " + (em.isOpen() ? "Is Open\n":"Is Closed\n"));
+
+      PTrack[] pTracks;
+      System.out.println();
+
+      System.out.println("Beginning Transaction");
+      em.getTransaction().begin();
+      try {
+         System.out.println("Parsing midi file");
+         pTracks = modelRunner.parseTracks();
+         displayResults(pTracks);
+         System.out.println("Persisting the Notes");
+
+         for(int i= 0; i < pTracks.length; i++) {
+            PTrack pt = pTracks[i];
+            for (int j = 0; j < pt.getNumberPNotes(); j++) {
+               em.persist(pt.getPNote(j));
+            }
+         }
+      } catch(Exception e){
+         e.printStackTrace();
+      }
+      System.out.println("Committing Transaction");
+      em.getTransaction().commit();
 
 
-      //pass midi file to MidiParser
-
-   }
-   /* SAMPLE TRANSACTION
+      /* SAMPLE TRANSACTION
       em.getTransaction().begin();
       Employee employee = new Employee();
       employee.setName("Chandan");
@@ -62,7 +127,64 @@ public class Main {
 */
 
 
- /*  private static final SessionFactory sessionFactory;
+
+
+
+
+
+   }
+
+
+   private static void displayResults(PTrack[] pTracks) {
+      System.out.println("Number of Tracks parsed = " + pTracks.length
+            + "\nNow Displaying Each Track's Results:\n");
+
+      for (int i = 0; i < pTracks.length; i++) {
+         PTrack pt = pTracks[i];
+         System.out.println("PTrack #" + pt.getTrackNumber() + ":");
+         for (int j = 0; j < pt.getNumberPNotes(); j++) {
+            System.out.println(
+                  "         PNote #" + (j + 1) + " " + pt.getPNote(j).toString());
+         }
+         System.out.println();
+      }
+   }
+
+   /*
+    * Method which masks and reads in password on the command line.
+    * DO NOT USE INSIDE IDE - BREAKS PROGRAM
+    * @return password
+    */
+
+   private static String promptForPassword_EraseDisplay(String prompt) {
+      return PasswordField.readPassword(prompt);
+      //System.out.println("Password entered was:" + password);
+
+   }
+
+
+   /*
+    * Method which takes in password - NO MASKING.
+    * FOR USE INSIDE IDE FOR TESTING
+    * @return password
+    */
+
+   private static String promptForPassword_noMask() {
+      //get password info
+      Scanner scanner = new Scanner(System.in);
+      String password = "";
+      System.out.print("Enter password: ");
+      password = scanner.next();
+      System.out.println();
+      return password;
+   }
+
+   private static StringBuilder getMidiFileResourcePath(int index) {
+      return new StringBuilder(midiSrcFiles[index] + RESOURCE_PATH);
+   }
+}
+   /* HIBERnATE STUFF
+ private static final SessionFactory sessionFactory;
    static {
       try {
          sessionFactory = new AnnotationConfiguration()
@@ -106,72 +228,3 @@ public class Main {
 
 */
 
-   /**
-    * Static method which runs simple DAO interation of MIDI DB command line app.
-    */
-   public static void commandLineAppJDBC() throws MissingMIDIDataException{
-      System.out.println("Welcome to the app midi database.");
-      String sequenceName = getMidiFileResourcePath(2).toString();
-
-      //object to pass to MidiParser
-      MidiDatabaseDAO dao = new BasicMidiDatabaseDAO();
-      Sequence sequence;
-      String password = promptForPassword_EraseDisplay();
-      //connect dao
-      try {
-         dao.createConnection("jdbc:mysql://localhost:3306/basicmididatabase", "root", password);
-      } catch (SQLException e) {
-         System.out.println("Failed to connect to DB");
-         e.printStackTrace();
-         return;
-      }
-
-      try {
-         sequence = MidiSystem.getSequence(new File(sequenceName));
-
-
-      } catch (Exception e) {
-         System.out.println("Failed to get sequence from specified file");
-         e.printStackTrace();
-         return;
-      }
-      System.out.println("Creating MidiParser");
-      MidiParser midiParser = new MidiParser(sequence);
-
-      System.out.println("Parsing midi file " + sequenceName);
-      midiParser.parseMidi();
-
-   }
-
-   /*
-    * Method which masks and reads in password on the command line.
-    * DO NOT USE INSIDE IDE - BREAKS PROGRAM
-    * @return password
-    */
-
-   private static String promptForPassword_EraseDisplay() {
-      String password = PasswordField.readPassword("Enter password: ");
-      //System.out.println("Password entered was:" + password);
-      return password;
-   }
-
-
-   /*
-    * Method which takes in password - NO MASKING.
-    * FOR USE INSIDE IDE FOR TESTING
-    * @return password
-    */
-
-   private static String promptForPassword_noMask() {
-      //get password info
-      Scanner scanner = new Scanner(System.in);
-      String password = "";
-      System.out.print("Enter password: ");
-      password = scanner.next();
-      System.out.println();
-      return password;
-   }
-   private static StringBuilder getMidiFileResourcePath(int index){
-      return new StringBuilder(midiSrcFiles[index] + RESOURCE_PATH);
-   }
-}

@@ -1,4 +1,4 @@
 package com.rosshoyt.app;
 
-public class MissingMIDIDataException extends Throwable {
+public class MissingMIDIDataException extends Exception {
 }

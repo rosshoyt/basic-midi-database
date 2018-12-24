@@ -9,8 +9,8 @@
             <property name="hibernate.generate_statistics" value="true" />
 
             <property name="javax.persistence.jdbc.driver" value="com.mysql.jdbc.Driver" />
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/basicmididatabase"/>
-            <!--property name="javax.persistence.jdbc.user" value="root" />
+            <!--property name="javax.persistence.jdbc.url" value="jdbc:mysql://localhost/basicmididatabase"/>
+            <property name="javax.persistence.jdbc.user" value="root" />
             <property name="javax.persistence.jdbc.password" value="" /-->
         </properties>
     </persistence-unit>

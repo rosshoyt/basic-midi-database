@@ -14,15 +14,18 @@ public class ModelRunner {
    //NoteOnQueue noteOnQueue;
 
 
-   MidiParser midiParser;
+   private MidiParser midiParser;
 
-   File file;
-   boolean isValid;
+   private File file;
+   private boolean isValid;
 
-   public ModelRunner(File file) throws FileNotFoundException {
-      this.file = file;
+   public ModelRunner() {
       isValid = false;
+   }
+   public void setFile(File file){
 
+
+      this.file = file;
       //setup sequence
       Sequence seq;
       try {
@@ -33,59 +36,20 @@ public class ModelRunner {
          isValid = true;
       }
       catch(Exception e){
-         if (!file.exists()) {
-            throw new FileNotFoundException(e.toString());
-         }
-         //catch other issues between FIle and java MidiSystem and throw excep
+         e.printStackTrace();
       }
+         //catch other issues between FIle and java MidiSystem and throw excep
    }
 
-   public PHeader parseHeader(){
 
+   public PHeader parseHeader() throws InvalidMidiSequenceException {
+      if(!isValid) throw new InvalidMidiSequenceException();
       return midiParser.parseHeader();
    }
-   //should really just use regular java tracks for this stage
-   public PTrack[] parseTracks() throws MissingMIDIDataException {
 
+   public PTrack[] parseTracks() throws MissingMIDIDataException, InvalidMidiSequenceException {
+      if(!isValid) throw new InvalidMidiSequenceException();
       return midiParser.parseTracks();
-   }
-
-
-   public static void main(String[] args) {
-      MidiParser midiParser;
-      String midiSrc = "src/main/resources/capone piano.mid";
-      System.out.println("Test Starting");
-      //create sequence parser with sequence
-      try{
-         midiParser = new MidiParser(MidiSystem.getSequence(new File(midiSrc)));
-
-      } catch(Exception e){
-         e.printStackTrace();
-         System.out.println("Failure, aborting");
-         return;
-
-      }
-      System.out.println("Testing parse tracks");
-      try {
-         PTrack[] pTracks = midiParser.parseTracks();
-
-         System.out.println("Number of Tracks parsed = " + pTracks.length
-               + "\nNow Displaying Each Track's Results:\n");
-
-         for (int i = 0; i < pTracks.length; i++){
-            PTrack pt = pTracks[i];
-            System.out.println("PTrack #" + pt.getTrackNumber() +":");
-            for(int j = 0; j < pt.getNumberPNotes(); j++){
-               System.out.println(
-                     "         PNote #" + (j+1) + " " + pt.getPNote(j).toString());
-            }
-            System.out.println();
-         }
-      } catch(MissingMIDIDataException e){
-         e.printStackTrace();
-      }
-      // trackEventLists = midiParser.parseTracks();
-
    }
 
 }
